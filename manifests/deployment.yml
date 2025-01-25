@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: chagakpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chagakpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: chagakpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: chagakpipelinesjavascriptdocker 
+          image: chaganotemycontainerregistry.azurecr.io/chagakpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
